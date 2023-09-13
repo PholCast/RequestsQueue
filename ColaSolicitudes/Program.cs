@@ -8,10 +8,15 @@ namespace RequestsQueue
     {
         static void Main(string[] args)
         {
-            Stopwatch stopwatch = new Stopwatch();
+
+            List<String> StringDataRequests = FileHandling.ReadFile("C:\\Users\\avira\\source\\repos\\RequestsQueue\\ColaSolicitudes\\data.txt");
+
+
+
+           Stopwatch stopwatch = new Stopwatch();
 
             stopwatch.Start();
-            Menu.ChooseOptionMenu(4);
+            Menu.ChooseOptionMenu();
 
             stopwatch.Stop();
 
