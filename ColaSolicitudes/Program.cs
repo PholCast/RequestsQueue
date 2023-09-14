@@ -13,17 +13,21 @@ namespace RequestsQueue
 
 
 
-           Stopwatch stopwatch = new Stopwatch();
+           
 
-            stopwatch.Start();
-            Menu.ChooseOptionMenu();
+           
+            Console.WriteLine("enter -1 for manual execution. Otherwise, select 10, 100, 1000 or 10000");
+            int autoOption = Convert.ToInt32(Console.ReadLine());
 
-            stopwatch.Stop();
+            Menu.ChooseOptionMenu(autoOption);
+
+            
+            
 
            
 
             
-            Console.WriteLine($"Elapsed Time: {stopwatch.ElapsedMilliseconds} milliseconds");
+            
         }
     }
 }

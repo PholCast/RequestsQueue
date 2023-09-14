@@ -8,35 +8,40 @@ namespace RequestsQueue
 {
     public static class Menu
     {
-        public static void ChooseOptionMenu(int auto = -1)
+        public static void ChooseOptionMenu(int auto = -1) //If auto is -1 we ask for an input
         {
-            int count_option = 0;//in case int auto is not given
+            int count_option = 1;//in case int auto is not given
             int option = 0;
 
             bool continueMenu = true; 
 
-            List<int> options = new List<int>() { 1,2,3};//for instance
+            //for instance
             while (continueMenu)
             {
                 if (auto == -1)
                 {
                     ShowMenu();
-                    option = Convert.ToInt32(Console.ReadLine());
+                    option = Convert.ToInt32(Console.ReadLine()); //Using inputs
                 }
-                //list with automatic options?
-                else if (count_option==options.Count)
+                
+                else if (count_option == auto * 2+1) // half enqueuing and half dequeuing
                 {
                     continueMenu = false;
-                    
-                    
+
+
+                }
+                else if(count_option <= auto  )
+                {
+                    option = 1; //Adding a request  automatically
+                    Console.WriteLine(count_option);
+
                 }
                 else
                 {
-                    option = options[count_option];
-                    count_option++;
-                   
+                    option = 2; //Attending to requests automatically
+                    Console.WriteLine(count_option);
                 }
-
+                count_option++;
                 switch (option)
                 {
                     case 1:
