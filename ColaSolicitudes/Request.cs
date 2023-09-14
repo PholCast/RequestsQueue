@@ -25,5 +25,16 @@ namespace RequestsQueue
         
         
         }
+
+        public override string ToString()
+        {
+            String representation= $"Request #{requestNumber}\n" +
+                                   $"Customer:{customerName}\n" +
+                                   $"Problem Description:{problemDescription}\n"+
+                                   $"Urgency Level: {urgencyLevel}\n";
+
+            return representation;
+
+        }
     }
 }
